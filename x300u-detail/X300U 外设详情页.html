@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X300U 外设详情页</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e10;
+    --fg: #f1efea;
+    --accent: #7c7c8a;
+    --fg-08: rgba(241,239,234,0.08);
+    --fg-22: rgba(241,239,234,0.22);
+    --fg-30: rgba(241,239,234,0.30);
+    --fg-55: rgba(241,239,234,0.55);
+    --fg-72: rgba(241,239,234,0.72);
+    --font-sans: 'Hanken Grotesk', 'Noto Sans SC', ui-sans-serif, -apple-system, sans-serif;
+    --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--fg);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Page can grow as tall as the long image needs — no height cap, no crop. */
+  .detail-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ---------- Header ---------- */
+  .detail-head {
+    width: 100%;
+    max-width: 1320px;
+    padding: 80px 40px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .detail-head .eyebrow {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .detail-head .eyebrow .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .detail-head h1 {
+    margin: 0;
+    font-weight: 400;
+    font-size: clamp(28px, 4.6vw, 52px);
+    letter-spacing: -0.01em;
+    line-height: 1.12;
+  }
+  .detail-head .sub {
+    margin: 0;
+    max-width: 560px;
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--fg-72);
+    text-wrap: pretty;
+  }
+  .detail-head .meta {
+    display: flex; flex-wrap: wrap; gap: 28px;
+    margin-top: 8px;
+    padding-top: 22px;
+    border-top: 0.5px solid var(--fg-08);
+  }
+  .detail-head .meta .cell {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .detail-head .meta .k {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-30);
+  }
+  .detail-head .meta .v {
+    font-size: 13.5px;
+    color: var(--fg-72);
+  }
+
+  /* ---------- Long image: full quality, full height, NO crop ---------- */
+  .detail-long {
+    width: 100%;
+    max-width: 1100px;       /* readable width on desktop; centred */
+    padding: 0 40px 120px;
+  }
+  .detail-long figure {
+    margin: 0;
+    border-radius: 2px;
+    overflow: hidden;        /* clips only the rounded corners, not height */
+  }
+  .detail-long img {
+    width: 100%;
+    height: auto;            /* key: image sets its own height */
+    display: block;
+    object-fit: contain;
+  }
+  .detail-long figcaption {
+    margin-top: 18px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--fg-30);
+    display: flex; justify-content: space-between;
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 720px) {
+    .detail-head { padding: 56px 20px 36px; }
+    .detail-long { padding: 0 14px 80px; }
+    .detail-head .meta { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+  <main class="detail-page">
+    <header class="detail-head">
+      <div class="eyebrow"><span class="dot"></span><span>Project · 外设 / Accessory</span></div>
+      <h1>X300U 专业影像手柄套装</h1>
+    </header>
+
+    <section class="detail-long">
+      <figure>
+        <img src="assets/x300u-detail-long.webp" alt="X300U 专业影像手柄套装 商品详情长图" width="2560" height="9756">
+      </figure>
+    </section>
+  </main>
+</body>
+</html>
